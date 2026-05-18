@@ -1,0 +1,10 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #3F51B5;
+}
+
+.message-subject {
+    color: #3F51B5;
+    font-weight: 700;
+}

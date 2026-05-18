@@ -1,0 +1,10 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #4CAF50;
+}
+
+.purok-chip {
+    color: #2E7D32;
+    font-weight: 700;
+}

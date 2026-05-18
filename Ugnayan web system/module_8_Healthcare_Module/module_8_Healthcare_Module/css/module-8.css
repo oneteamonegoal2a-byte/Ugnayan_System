@@ -1,0 +1,10 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #009688;
+}
+
+.health-date {
+    color: #009688;
+    font-weight: 700;
+}

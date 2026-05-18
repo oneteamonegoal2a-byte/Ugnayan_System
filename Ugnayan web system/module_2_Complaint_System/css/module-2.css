@@ -1,0 +1,10 @@
+@import "../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #D32F2F;
+}
+
+.complaint-priority {
+    color: #B42318;
+    font-weight: 700;
+}

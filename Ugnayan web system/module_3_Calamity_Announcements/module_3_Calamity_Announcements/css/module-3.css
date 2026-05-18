@@ -1,0 +1,9 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #F44336;
+}
+
+.alert-note {
+    border-left: 4px solid #F44336;
+}

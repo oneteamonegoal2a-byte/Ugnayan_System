@@ -1,0 +1,10 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #7B1FA2;
+}
+
+.fee-chip {
+    color: #7B1FA2;
+    font-weight: 700;
+}

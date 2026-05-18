@@ -1,0 +1,10 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #795548;
+}
+
+.quantity-chip {
+    color: #795548;
+    font-weight: 700;
+}

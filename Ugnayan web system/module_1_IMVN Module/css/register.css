@@ -1,0 +1,566 @@
+/* =========================
+CSS Variables
+========================= */
+:root {
+    --primary-red: #8B1515;
+    --primary-red-hover: #A31D1D;
+    --bg-light: #F4F6F8;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --border-light: #E0E0E0;
+    --success-green: #2E7D32;
+}
+
+/* =========================
+Global Styles
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+body.message-page {
+    align-items: center;
+}
+
+.registration-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.message-container {
+    max-width: 620px;
+}
+
+/* =========================
+Header
+========================= */
+.reg-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-gray);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.reg-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-red);
+}
+
+.message-header {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* =========================
+Progress Bar
+========================= */
+.progress-bar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 0 40px;
+}
+
+.progress-bar::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 60px;
+    right: 60px;
+    height: 2px;
+    background: var(--border-light);
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    z-index: 2;
+    width: 120px;
+    padding: 0 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-light);
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--border-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    color: var(--text-gray);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.step span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-gray);
+    transition: 0.3s;
+}
+
+.step.active .step-circle,
+.step.completed .step-circle {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: #fff;
+}
+
+.step.active span {
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+/* =========================
+Form Card
+========================= */
+.form-card {
+    padding: 40px;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.step-title {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* =========================
+Form Steps
+========================= */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* =========================
+Form Layout
+========================= */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .input-group {
+    flex: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(139, 21, 21, 0.1);
+}
+
+/* =========================
+Info Box
+========================= */
+.info-box {
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: 8px;
+    background: #E8EAF6;
+    color: #3F51B5;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+Upload Box
+========================= */
+.upload-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+    padding: 24px;
+    border: 2px dashed var(--border-light);
+    border-radius: 12px;
+    background: #FAFAFA;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-box:hover {
+    border-color: var(--primary-red);
+    background: #FFF5F5;
+}
+
+.upload-icon {
+    font-size: 32px;
+    color: var(--text-gray);
+}
+
+.upload-text h4 {
+    margin-bottom: 4px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.upload-text p {
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-red);
+}
+
+.upload-text span {
+    font-size: 12px;
+    color: var(--text-gray);
+}
+
+/* =========================
+Important Note
+========================= */
+.important-note {
+    margin-top: 24px;
+    padding: 16px;
+    border-left: 4px solid #FF9800;
+    border-radius: 0 8px 8px 0;
+    background: #FFF3E0;
+    color: #E65100;
+    font-size: 13px;
+}
+
+.important-note ul {
+    margin: 8px 0 0 20px;
+}
+
+/* =========================
+Summary Box
+========================= */
+.summary-box {
+    margin-bottom: 24px;
+    padding: 24px;
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+    background: #FAFAFA;
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.avatar-lg {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-red);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.summary-header h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.summary-header p {
+    font-size: 14px;
+    color: var(--text-gray);
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    font-size: 14px;
+}
+
+.summary-label {
+    font-weight: 500;
+    color: var(--text-gray);
+}
+
+.summary-value {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* =========================
+Checkbox
+========================= */
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.terms-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-gray);
+}
+
+/* =========================
+Buttons
+========================= */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-light);
+}
+
+.btn-outline,
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-outline {
+    border: 1px solid var(--border-light);
+    background: #fff;
+    color: var(--text-dark);
+}
+
+.btn-outline:hover {
+    background: #f5f5f5;
+}
+
+.btn-primary {
+    border: none;
+    background: var(--primary-red);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-red-hover);
+}
+
+.w-100 {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+}
+
+/* =========================
+Success State
+========================= */
+.success-state {
+    padding: 8px 0;
+    text-align: center;
+}
+
+.success-icon {
+    width: 78px;
+    height: 78px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #E8F5E9;
+    color: var(--success-green);
+    font-size: 38px;
+}
+
+.success-state.is-error .success-icon {
+    background: #FEE2E2;
+    color: var(--primary-red);
+}
+
+.message-card {
+    border: 1px solid var(--border-light);
+    box-shadow: 0 14px 35px rgba(51, 51, 51, 0.08);
+}
+
+.message-card::before {
+    content: '';
+    display: block;
+    width: 58px;
+    height: 4px;
+    margin: 0 auto 28px;
+    border-radius: 999px;
+    background: var(--primary-red);
+}
+
+.success-state .btn-primary {
+    min-width: 190px;
+}
+
+.success-state .btn-primary i {
+    font-size: 14px;
+}
+
+.success-state h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.success-state p {
+    max-width: 500px;
+    margin: 0 auto 32px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+/* =========================
+Status Box
+========================= */
+.status-box {
+    margin-bottom: 32px;
+    padding: 20px;
+    border-radius: 8px;
+    background: #F3E5F5;
+    color: #6A1B9A;
+}
+
+.pending-status {
+    border: 1px solid #FDE68A;
+    background: #FFFBEB;
+    color: #92400E;
+}
+
+.error-status {
+    border: 1px solid #FECACA;
+    background: #FEF2F2;
+    color: #991B1B;
+}
+
+.status-box strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.status-box span {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding: 24px 14px;
+    }
+
+    .reg-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .message-header {
+        align-items: center;
+    }
+
+    .form-card {
+        padding: 28px 20px;
+        border-radius: 12px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-actions {
+        align-items: stretch;
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
+
+    .btn-outline,
+    .btn-primary,
+    .success-state .btn-primary {
+        width: 100%;
+    }
+}

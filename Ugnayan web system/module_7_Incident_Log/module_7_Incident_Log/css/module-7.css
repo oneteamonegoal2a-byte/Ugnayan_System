@@ -1,0 +1,10 @@
+@import "../../../assets/css/ugnayan-module.css";
+
+:root {
+    --module-accent: #607D8B;
+}
+
+.incident-location {
+    color: #607D8B;
+    font-weight: 700;
+}
